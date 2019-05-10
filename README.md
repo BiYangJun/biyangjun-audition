@@ -1,6 +1,5 @@
 # biyangjun-audition
 
-
 环境|版本
 ---|---
 操作系统|macOS 10.14.4
@@ -28,4 +27,9 @@ vue-cli|3.7
 9. 自定义全局指令`v-lazy`,对`img`标签进行绑定，添加占位图片。
 
 ### 待优化
+
 1. 做列表数据的缓存
+
+### 效果图
+
+![图](https://upload.hahabianli.com/img/201905/10/5cd51c0e0a7af29067.png)

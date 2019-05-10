@@ -1,7 +1,10 @@
 <template>
   <div class="card">
-    <div class="card-img">
-      <img :alt="cardData.name" :title="cardData.name" v-lazy="cardData.imgSrc" >
+    <div class="card-img-box">
+      <div class="card-img">
+      <lazy-img :src="cardData.imgSrc" :alt="cardData.name" :title="cardData.name"></lazy-img>
+      </div>
+      <!-- <img :alt="cardData.name" :title="cardData.name" v-lazy="cardData.imgSrc" class="card-img"> -->
     </div>
     <div class="card-box">
       <div class="card-content">
@@ -13,8 +16,12 @@
   </div>
 </template>
 <script>
+import lazyImg from './lazy-img.vue'; 
 export default {
   name: "card",
+  components:{
+    lazyImg
+  },
   props: {
     cardData: {
       type: Object,
@@ -38,9 +45,9 @@ export default {
 
 .card {
   display: flex;
-  .card-img {
+  .card-img-box {
     padding:.14rem 0 .15rem .3rem;
-    img {
+    .card-img{
       width: 1.28rem;
       height: 1.28rem;
       display: block;
