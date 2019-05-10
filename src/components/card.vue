@@ -35,6 +35,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import "../lib/public";
+
 .card {
   display: flex;
   .card-img {

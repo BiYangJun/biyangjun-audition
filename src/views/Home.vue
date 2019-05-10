@@ -8,7 +8,8 @@
       <div class="nav-line" :style="'left:'+1.24*selectInd+'rem'"></div>
     </ul>
     <v-touch @swipeleft="onSwipeLeft" @swiperight="onSwipeRight" class="v-touch-box">
-      <CardList :card-list-data="listData" :open-loading="loadingStatus"></CardList>
+      <CardList :card-list-data="listData"></CardList>
+      <Loading v-show="loadingStatus"></Loading>
     </v-touch>
   </div>
 </template>
@@ -18,11 +19,12 @@
 import CardList from '@/components/card-list.vue';
 import {mapActions,mapState,mapMutations} from 'vuex';
 import {navList} from '@/data.js';
-
+import Loading from '@/components/loading.vue'
 export default {
   name: 'home',
   components:{
-    CardList
+    CardList,
+    Loading
   },
   data(){
     return {
@@ -98,6 +100,7 @@ export default {
     flex-direction: column;
     .v-touch-box{
       flex: 1;
+      position: relative;
     }
   }
   .nav{

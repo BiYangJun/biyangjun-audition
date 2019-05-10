@@ -30,7 +30,7 @@ export default {
     .load-box{
         width: 100%;
         min-height: 100%;
-        background-color:rgba(255,255,255,.7);
+        background-color:rgba(255,255,255,.5);
         overflow: hidden;
         position: absolute;
         top:0rem;
@@ -40,7 +40,7 @@ export default {
         width:1.5rem;
         height: 1.5rem;
         position: absolute;
-        top:50%;
+        top:30%;
         left:50%;
         transform: translateX(-50%) translateY(-50%);
 
