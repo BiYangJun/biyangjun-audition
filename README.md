@@ -32,4 +32,4 @@ vue-cli|3.7
 
 ### 效果图
 
-![图](https://github.com/BiYangJun/biyangjun-audition/master/screenshot.jpg)
+![图](https://github.com/BiYangJun/biyangjun-audition/raw/master/img.png)
