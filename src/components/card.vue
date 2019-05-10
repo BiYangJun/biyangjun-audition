@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <div class="card-img">
-      <img :src="cardData.imgSrc" :alt="cardData.name" :title="cardData.name">
+      <img :alt="cardData.name" :title="cardData.name" v-lazy="cardData.imgSrc" >
     </div>
     <div class="card-box">
       <div class="card-content">

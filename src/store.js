@@ -15,7 +15,7 @@ export default new Vuex.Store({
     setRecordNavInd(state,payload){
       state.recordNavInd = payload;
       // 记录上次点击的下标id，并保存1天
-      console.log(payload)
+      // console.log(payload)
       Cookie.set('recordNavInd',payload,1);
     }
   },
@@ -26,7 +26,7 @@ export default new Vuex.Store({
         setTimeout(() => {
           let requestData = listData.find(ele=>ele.id == payload.id);
           resolve(requestData?requestData:listData[0])
-        }, 200);
+        }, 300);
       })
     }
   }

@@ -7,7 +7,9 @@
       </li>
       <div class="nav-line" :style="'left:'+1.24*selectInd+'rem'"></div>
     </ul>
-    <CardList :card-list-data="listData" :open-loading="loadingStatus"></CardList>
+    <v-touch @swipeleft="onSwipeLeft" @swiperight="onSwipeRight" class="v-touch-box">
+      <CardList :card-list-data="listData" :open-loading="loadingStatus"></CardList>
+    </v-touch>
   </div>
 </template>
 
@@ -43,6 +45,24 @@ export default {
   methods:{
     ...mapActions(['getSomeData']),
     ...mapMutations(['setRecordNavInd']),
+    onSwipeLeft(){
+      console.log('左滑')
+      let s_ind = this.selectInd;
+      if(s_ind == this.navList.length - 1) return;
+      this.selectInd = s_ind + 1;
+      let id = this.navList[this.selectInd]['id'];
+      this.setRecordNavInd(id);
+      this.getData(id)
+    },
+    onSwipeRight(){
+      console.log('右滑')
+      let s_ind = this.selectInd;
+      if(s_ind == 0) return;
+      this.selectInd = s_ind - 1;
+      let id = this.navList[this.selectInd]['id'];
+      this.setRecordNavInd(id);
+      this.getData(id)
+    },
     initSelectInd(){
       let ind = navList.findIndex(ele=>ele.id == this.selectID);
       this.selectInd = ind > -1 ? ind : 0;
@@ -72,6 +92,14 @@ export default {
 </script>
 <style lang="scss" scoped>
  @import "../lib/public";
+  .home{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    .v-touch-box{
+      flex: 1;
+    }
+  }
   .nav{
     height: 1.4rem;
     position: relative;

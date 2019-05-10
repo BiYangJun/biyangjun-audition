@@ -30,7 +30,7 @@ export default {
 </script>
 <style lang="scss" scoped>
     .card-list{
-        padding-top:.16rem;
+        margin-top:.16rem;
         position: relative;
     }
 </style>
