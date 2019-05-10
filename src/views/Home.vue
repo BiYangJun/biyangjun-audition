@@ -127,7 +127,7 @@ export default {
           background-size: 0.485rem 2.885rem;
           width:0.485rem;
           height: 0.481rem;
-          background-position: 0rem -0.481rem * $i;
+          background-position: 0rem -0.482rem * $i;
         }
       }
     }
